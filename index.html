@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Freyre Santiago | Ingeniero Electrónico en Formación</title>
+    <meta name="description" content="Portfolio de Ingeniería Electrónica, diseño de circuitos y desarrollo de software.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header id="navbar">
+        <div class="container nav-container">
+            <a href="#" class="logo">&lt;FS /&gt;</a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#about">Sobre mí</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Proyectos</a></li>
+                    <li><a href="#contact" class="btn-primary">Contacto</a></li>
+                </ul>
+                <button class="mobile-toggle" aria-label="Abrir menú">
+                    <i data-lucide="menu"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <section id="hero">
+        <div class="container hero-content fade-in">
+            <p class="overline">Estudiante de Ingeniería Electrónica @ UNS</p>
+            <h1>Diseñando sistemas,<br> <span class="text-gradient">resolviendo lógica.</span></h1>
+            <p class="hero-desc">Especializado en semiconductores, simulación de circuitos y desarrollo de software embebido.</p>
+            <div class="cta-group">
+                <a href="#projects" class="btn-outline">Ver Proyectos</a>
+                <a href="assets/cv-santiago.pdf" target="_blank" class="btn-primary" download>
+                    <i data-lucide="download"></i> Descargar CV
+                </a>
+            </div>
+        </div>
+        <div class="tech-grid"></div>
+    </section>
+
+    <section id="skills" class="section-padding">
+        <div class="container">
+            <h2 class="section-title">Stack Tecnológico</h2>
+            <div class="skills-grid">
+                <div class="skill-card reveal">
+                    <i data-lucide="cpu"></i>
+                    <h3>Hardware</h3>
+                    <p>Circuit Analysis, LTspice, Transistors (MOS/BJT)</p>
+                </div>
+                <div class="skill-card reveal">
+                    <i data-lucide="code-2"></i>
+                    <h3>Software</h3>
+                    <p>C++, Qt Creator, MATLAB, ECS Architecture</p>
+                </div>
+                <div class="skill-card reveal">
+                    <i data-lucide="file-json"></i>
+                    <h3>Herramientas</h3>
+                    <p>Git, Overleaf (LaTeX), Linux</p>
+                </div>
+                <div class="skill-card reveal">
+                    <i data-lucide="zap"></i>
+                    <h3>Potencia</h3>
+                    <p>Synchronous Generators, Transformers</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="section-padding">
+        <div class="container">
+            <h2 class="section-title">Proyectos Destacados</h2>
+            
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">Todos</button>
+                <button class="filter-btn" data-filter="software">Software</button>
+                <button class="filter-btn" data-filter="electronics">Electrónica</button>
+                <button class="filter-btn" data-filter="simulation">Simulación</button>
+            </div>
+
+            <div class="projects-grid" id="projects-container">
+                </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section-padding">
+        <div class="container contact-wrapper">
+            <div class="contact-info reveal">
+                <h2>Conectemos</h2>
+                <p>Actualmente abierto a pasantías y colaboraciones en Bahía Blanca o remoto.</p>
+                <div class="social-links">
+                    <a href="mailto:santiagofreyre2004@gmail.com" class="social-item">
+                        <i data-lucide="mail"></i> santiagofreyre2004@gmail.com
+                    </a>
+                    <a href="https://linkedin.com" target="_blank" class="social-item">
+                        <i data-lucide="linkedin"></i> LinkedIn
+                    </a>
+                    <a href="https://github.com" target="_blank" class="social-item">
+                        <i data-lucide="github"></i> GitHub
+                    </a>
+                </div>
+            </div>
+            
+            <form action="https://formspree.io/f/TU_ID_AQUI" method="POST" class="contact-form reveal">
+                <div class="form-group">
+                    <label for="name">Nombre</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Mensaje</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="btn-primary full-width">Enviar Mensaje</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container footer-content">
+            <p>&copy; 2026 Freyre Santiago. Construido con <i data-lucide="code"></i> y café.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
