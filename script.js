@@ -7,31 +7,31 @@ document.addEventListener('DOMContentLoaded', () => {
     // === GESTIÓN DE PROYECTOS ===
     const projectsData = [
         {
-            title: "C++ Entity Component System",
-            description: "Desarrollo de un motor ECS personalizado usando C++ y Qt Creator. Optimización de gestión de memoria y arquitectura orientada a datos.",
-            tags: ["C++", "Qt", "Software Architecture"],
+            title: "Motor ECS en C++ & Qt",
+            description: "Desarrollo de una arquitectura Entity-Component-System desde cero para optimización de memoria y gestión de entidades en simulaciones complejas.",
+            tags: ["C++", "Qt Creator", "Software Architecture"],
             category: "software",
-            link: "#" // Link a tu repo
+            link: "https://github.com/xXxSantiagooXxx" // Tu perfil o repo específico
         },
         {
-            title: "Simulación de Transistores MOSFET",
-            description: "Análisis profundo de curvas características NMOS/PMOS utilizando LTspice. Modelado de comportamiento en diferentes regiones de operación.",
-            tags: ["LTspice", "Electronics", "Simulation"],
+            title: "Análisis de Transistores (LTspice)",
+            description: "Simulación y modelado de curvas características de transistores NMOS, PMOS y BJT. Análisis de respuesta en frecuencia y puntos de operación.",
+            tags: ["LTspice", "Electrónica Analógica", "Simulation"],
             category: "simulation",
             link: "#"
         },
         {
-            title: "Modelado de Generadores Síncronos",
-            description: "Scripts de MATLAB para calcular y graficar el comportamiento de generadores bajo diferentes cargas y factores de potencia.",
-            tags: ["MATLAB", "Power Systems", "Math"],
+            title: "Modelado de Semiconductores",
+            description: "Uso de MATLAB para modelar el comportamiento físico de dispositivos semiconductores y uniones PN bajo diferentes condiciones.",
+            tags: ["MATLAB", "Física", "Math"],
             category: "software",
             link: "#"
         },
         {
-            title: "Diseño de PCBs con Altium",
-            description: "Diseño esquemático y layout de PCB para sistema embebido de control. Consideraciones de EMI y trazado de señal.",
-            tags: ["Altium", "PCB", "Hardware"],
-            category: "electronics",
+            title: "Solicitud Beca Univ. Salamanca",
+            description: "Redacción técnica y formal para postulación a becas internacionales, demostrando capacidad de comunicación profesional.",
+            tags: ["Gestión", "Comunicación"],
+            category: "otros",
             link: "#"
         }
     ];
@@ -103,4 +103,5 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Llamar inicialmente
     observeElements();
+
 });
