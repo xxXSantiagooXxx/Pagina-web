@@ -3,30 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Freyre Santiago | Ingeniero Electrónico en Formación</title>
-    <meta name="description" content="Portfolio de Ingeniería Electrónica, diseño de circuitos y desarrollo de software.">
-    
+    <title>Freyre Santiago | Portfolio de Ingeniería Electrónica</title>
+    <meta name="description" content="Portfolio personal de ingeniería electrónica con proyectos, CV y experiencia académica.">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
-    
     <script src="https://unpkg.com/lucide@latest"></script>
-    
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
     <header id="navbar">
         <div class="container nav-container">
-            <a href="#" class="logo">&lt;FS /&gt;</a>
+            <a href="#hero" class="logo" aria-label="Ir al inicio">&lt;FS /&gt;</a>
             <nav>
-                <ul class="nav-links">
+                <ul class="nav-links" id="nav-links">
                     <li><a href="#about">Sobre mí</a></li>
-                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#skills">Habilidades</a></li>
                     <li><a href="#projects">Proyectos</a></li>
+                    <li><a href="#cv">CV</a></li>
                     <li><a href="#contact" class="btn-primary">Contacto</a></li>
                 </ul>
-                <button class="mobile-toggle" aria-label="Abrir menú">
+                <button class="mobile-toggle" id="mobile-toggle" aria-label="Abrir o cerrar menú" aria-expanded="false">
                     <i data-lucide="menu"></i>
                 </button>
             </nav>
@@ -34,68 +32,83 @@
     </header>
 
     <section id="hero">
-        <div class="container hero-content fade-in">
-            <p class="overline">Estudiante de Ingeniería Electrónica @ UNS</p>
-            <h1>Diseñando sistemas,<br> <span class="text-gradient">resolviendo lógica.</span></h1>
-            <p class="hero-desc">Especializado en semiconductores, simulación de circuitos y desarrollo de software embebido.</p>
+        <div class="container hero-content reveal active">
+            <p class="overline">Estudiante de Ingeniería Electrónica | UNS</p>
+            <h1>Construyo soluciones de <span class="text-gradient">electrónica + software</span>.</h1>
+            <p class="hero-desc">Página personal para mostrar mis proyectos, mi recorrido académico y cómo trabajo para convertir ideas técnicas en resultados concretos.</p>
             <div class="cta-group">
-                <a href="#projects" class="btn-outline">Ver Proyectos</a>
-                <a href="CV__Freyre Santiago.pdf" target="_blank" class="btn-primary" download>
+                <a href="#projects" class="btn-outline">Ver proyectos</a>
+                <a href="CV__Freyre Santiago.pdf" target="_blank" rel="noopener" class="btn-primary" download>
                     <i data-lucide="download"></i> Descargar CV
                 </a>
             </div>
         </div>
-        <div class="tech-grid"></div>
+        <div class="tech-grid" aria-hidden="true"></div>
     </section>
 
-
-    <section id="education" class="section-padding" style="background-color: var(--bg-secondary);">
-    <div class="container">
-        <h2 class="section-title">Formación Académica</h2>
-        <div class="education-card" style="border-left: 4px solid var(--accent); padding-left: 20px; margin-top: 30px;">
-            <h3 style="color: #fff;">Ingeniería Electrónica</h3>
-            <p style="color: var(--accent); font-family: var(--font-mono); margin-bottom: 5px;">Universidad Nacional del Sur (UNS)</p>
-            <p style="color: var(--text-secondary); font-size: 0.9rem;">Bahía Blanca, Argentina | En curso (3er Año)</p>
-            <p style="margin-top: 10px; color: var(--text-primary);">
-                Fuerte base en análisis de circuitos, física de semiconductores (PN, MOS) y teoría de máquinas eléctricas.
-            </p>
+    <section id="about" class="section-padding">
+        <div class="container about-grid">
+            <div class="about-card reveal">
+                <h2 class="section-title left">Sobre mí</h2>
+                <p>Soy Santiago Freyre y estoy en formación como ingeniero electrónico. Me interesa el diseño y análisis de circuitos, la simulación y el desarrollo de herramientas de software para problemas de ingeniería.</p>
+                <p>Disfruto aprender construyendo: cada proyecto es una oportunidad para mejorar en pensamiento técnico, documentación y trabajo organizado.</p>
+            </div>
+            <div class="about-card reveal">
+                <h3>Objetivo profesional</h3>
+                <p>Busco oportunidades de pasantía y colaboración donde pueda aportar en proyectos de electrónica aplicada, automatización o software técnico.</p>
+                <ul class="check-list">
+                    <li><i data-lucide="check-circle-2"></i> Análisis y simulación de circuitos</li>
+                    <li><i data-lucide="check-circle-2"></i> Programación en C++ y MATLAB</li>
+                    <li><i data-lucide="check-circle-2"></i> Documentación técnica clara</li>
+                </ul>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 
-    
+    <section id="education" class="section-padding bg-secondary">
+        <div class="container">
+            <h2 class="section-title">Formación Académica</h2>
+            <article class="education-card reveal">
+                <h3>Ingeniería Electrónica</h3>
+                <p class="education-meta">Universidad Nacional del Sur (UNS) · Bahía Blanca, Argentina</p>
+                <p>En curso (3.er año). Base sólida en análisis de circuitos, semiconductores (uniones PN y MOS) y máquinas eléctricas.</p>
+            </article>
+        </div>
+    </section>
+
     <section id="skills" class="section-padding">
         <div class="container">
-            <h2 class="section-title">Stack Tecnológico</h2>
+            <h2 class="section-title">Habilidades técnicas</h2>
             <div class="skills-grid">
                 <div class="skill-card reveal">
                     <i data-lucide="cpu"></i>
-                    <h3>Hardware</h3>
-                    <p>Circuit Analysis, LTspice, Transistors (MOS/BJT)</p>
+                    <h3>Electrónica</h3>
+                    <p>Diseño y análisis de circuitos analógicos y digitales básicos.</p>
+                </div>
+                <div class="skill-card reveal">
+                    <i data-lucide="waveform"></i>
+                    <h3>Simulación</h3>
+                    <p>LTspice y MATLAB para modelado, verificación y análisis.</p>
                 </div>
                 <div class="skill-card reveal">
                     <i data-lucide="code-2"></i>
                     <h3>Software</h3>
-                    <p>C++, Qt Creator, MATLAB, ECS Architecture</p>
+                    <p>C++, Qt Creator, arquitectura ECS y scripting técnico.</p>
                 </div>
                 <div class="skill-card reveal">
-                    <i data-lucide="file-json"></i>
+                    <i data-lucide="git-branch"></i>
                     <h3>Herramientas</h3>
-                    <p>Git, Overleaf (LaTeX), Linux</p>
-                </div>
-                <div class="skill-card reveal">
-                    <i data-lucide="zap"></i>
-                    <h3>Potencia</h3>
-                    <p>Synchronous Generators, Transformers</p>
+                    <p>Git, Linux, Overleaf y flujo de trabajo de proyectos.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="projects" class="section-padding">
+    <section id="projects" class="section-padding bg-secondary">
         <div class="container">
-            <h2 class="section-title">Proyectos Destacados</h2>
-            
+            <h2 class="section-title">Proyectos destacados</h2>
+            <p class="section-subtitle">Selecciona una categoría para filtrar proyectos.</p>
+
             <div class="filter-buttons">
                 <button class="filter-btn active" data-filter="all">Todos</button>
                 <button class="filter-btn" data-filter="software">Software</button>
@@ -103,29 +116,34 @@
                 <button class="filter-btn" data-filter="simulation">Simulación</button>
             </div>
 
-            <div class="projects-grid" id="projects-container">
-                </div>
+            <div class="projects-grid" id="projects-container"></div>
         </div>
     </section>
 
-    <section id="contact" class="section-padding">
+    <section id="cv" class="section-padding">
+        <div class="container cv-box reveal">
+            <div>
+                <h2 class="section-title left">CV y perfil</h2>
+                <p>Si querés conocer más detalle de mi formación, experiencia y herramientas, podés descargar mi CV actualizado.</p>
+            </div>
+            <a href="CV__Freyre Santiago.pdf" target="_blank" rel="noopener" class="btn-primary" download>
+                <i data-lucide="file-down"></i> Descargar CV en PDF
+            </a>
+        </div>
+    </section>
+
+    <section id="contact" class="section-padding bg-secondary">
         <div class="container contact-wrapper">
             <div class="contact-info reveal">
-                <h2>Conectemos</h2>
-                <p>Actualmente abierto a pasantías y colaboraciones en Bahía Blanca o remoto.</p>
+                <h2>Contacto</h2>
+                <p>Estoy abierto a pasantías, proyectos freelance y colaboraciones técnicas.</p>
                 <div class="social-links">
-                    <a href="mailto:santiagofreyre2004@gmail.com" class="social-item">
-                        <i data-lucide="mail"></i> santiagofreyre2004@gmail.com
-                    </a>
-                    <a href="https://linkedin.com" target="_blank" class="social-item">
-                        <i data-lucide="linkedin"></i> LinkedIn
-                    </a>
-                    <a href="https://github.com" target="_blank" class="social-item">
-                        <i data-lucide="github"></i> GitHub
-                    </a>
+                    <a href="mailto:santiagofreyre2004@gmail.com" class="social-item"><i data-lucide="mail"></i> santiagofreyre2004@gmail.com</a>
+                    <a href="https://linkedin.com" target="_blank" rel="noopener" class="social-item"><i data-lucide="linkedin"></i> LinkedIn</a>
+                    <a href="https://github.com" target="_blank" rel="noopener" class="social-item"><i data-lucide="github"></i> GitHub</a>
                 </div>
             </div>
-            
+
             <form action="https://formspree.io/f/TU_ID_AQUI" method="POST" class="contact-form reveal">
                 <div class="form-group">
                     <label for="name">Nombre</label>
@@ -139,22 +157,17 @@
                     <label for="message">Mensaje</label>
                     <textarea id="message" name="message" rows="5" required></textarea>
                 </div>
-                <button type="submit" class="btn-primary full-width">Enviar Mensaje</button>
+                <button type="submit" class="btn-primary full-width">Enviar mensaje</button>
             </form>
         </div>
     </section>
 
     <footer>
         <div class="container footer-content">
-            <p>&copy; 2026 Freyre Santiago. Construido con <i data-lucide="code"></i> y café.</p>
+            <p>&copy; 2026 Freyre Santiago. Portfolio personal de Ingeniería Electrónica.</p>
         </div>
     </footer>
 
     <script src="script.js"></script>
 </body>
-
 </html>
-
-
-
-
