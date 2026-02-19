@@ -1,107 +1,110 @@
-// Esperar a que cargue el DOM
 document.addEventListener('DOMContentLoaded', () => {
-    
-    // Inicializar iconos Lucide
     lucide.createIcons();
 
-    // === GESTIÓN DE PROYECTOS ===
     const projectsData = [
         {
-            title: "Motor ECS en C++ & Qt",
-            description: "Desarrollo de una arquitectura Entity-Component-System desde cero para optimización de memoria y gestión de entidades en simulaciones complejas.",
-            tags: ["C++", "Qt Creator", "Software Architecture"],
-            category: "software",
-            link: "https://github.com/xXxSantiagooXxx" // Tu perfil o repo específico
+            title: 'Motor ECS en C++ y Qt',
+            description: 'Implementación de arquitectura Entity-Component-System para mejorar organización y rendimiento en simulaciones complejas.',
+            tags: ['C++', 'Qt', 'ECS'],
+            category: 'software',
+            link: 'https://github.com/xXxSantiagooXxx'
         },
         {
-            title: "Análisis de Transistores (LTspice)",
-            description: "Simulación y modelado de curvas características de transistores NMOS, PMOS y BJT. Análisis de respuesta en frecuencia y puntos de operación.",
-            tags: ["LTspice", "Electrónica Analógica", "Simulation"],
-            category: "simulation",
-            link: "#"
+            title: 'Caracterización de transistores en LTspice',
+            description: 'Simulación de curvas de NMOS, PMOS y BJT para obtener puntos de operación y analizar comportamiento dinámico.',
+            tags: ['LTspice', 'MOS/BJT', 'Análisis'],
+            category: 'simulation',
+            link: '#'
         },
         {
-            title: "Modelado de Semiconductores",
-            description: "Uso de MATLAB para modelar el comportamiento físico de dispositivos semiconductores y uniones PN bajo diferentes condiciones.",
-            tags: ["MATLAB", "Física", "Math"],
-            category: "software",
-            link: "#"
+            title: 'Fuente regulada de laboratorio',
+            description: 'Diseño conceptual de una etapa de potencia con regulación, protecciones básicas y criterios de seguridad.',
+            tags: ['Electrónica', 'Potencia', 'Diseño'],
+            category: 'electronics',
+            link: '#'
         },
         {
-            title: "Solicitud Beca Univ. Salamanca",
-            description: "Redacción técnica y formal para postulación a becas internacionales, demostrando capacidad de comunicación profesional.",
-            tags: ["Gestión", "Comunicación"],
-            category: "otros",
-            link: "#"
+            title: 'Modelado de semiconductores con MATLAB',
+            description: 'Modelos numéricos para estudiar respuesta de uniones PN bajo diferentes condiciones de polarización.',
+            tags: ['MATLAB', 'Semiconductores', 'Modelado'],
+            category: 'simulation',
+            link: '#'
         }
     ];
 
     const projectsContainer = document.getElementById('projects-container');
     const filterBtns = document.querySelectorAll('.filter-btn');
 
-    // Función para renderizar proyectos
     function renderProjects(filter = 'all') {
-        projectsContainer.innerHTML = ''; // Limpiar grid
-        
-        const filteredProjects = filter === 'all' 
-            ? projectsData 
-            : projectsData.filter(p => p.category === filter);
+        projectsContainer.innerHTML = '';
 
-        filteredProjects.forEach(project => {
-            const card = document.createElement('div');
-            card.classList.add('project-card', 'reveal'); // Agregamos clase reveal para animación
-            
-            // Generar HTML de los tags
-            const tagsHtml = project.tags.map(tag => `<span class="tag">${tag}</span>`).join('');
+        const filteredProjects = filter === 'all'
+            ? projectsData
+            : projectsData.filter((project) => project.category === filter);
+
+        filteredProjects.forEach((project) => {
+            const card = document.createElement('article');
+            card.className = 'project-card reveal';
+
+            const tagsHtml = project.tags.map((tag) => `<span class="tag">${tag}</span>`).join('');
+            const isPlaceholder = project.link === '#';
 
             card.innerHTML = `
-                <div class="project-img">
-                    <i data-lucide="folder-code" size="48"></i> </div>
+                <div class="project-img"><i data-lucide="folder-code" size="44"></i></div>
                 <div class="project-content">
                     <h3>${project.title}</h3>
                     <p>${project.description}</p>
                     <div class="project-tags">${tagsHtml}</div>
-                    <a href="${project.link}" class="project-link">Ver en GitHub &rarr;</a>
+                    <a href="${project.link}" class="project-link" ${isPlaceholder ? '' : 'target="_blank" rel="noopener"'}>
+                        ${isPlaceholder ? 'Próximamente' : 'Ver proyecto'} →
+                    </a>
                 </div>
             `;
+
             projectsContainer.appendChild(card);
         });
-        
-        // Reinicializar iconos para los nuevos elementos
+
         lucide.createIcons();
-        // Disparar observador para las nuevas tarjetas
         observeElements();
     }
 
-    // Event listeners para filtros
-    filterBtns.forEach(btn => {
+    filterBtns.forEach((btn) => {
         btn.addEventListener('click', () => {
-            // Remover clase active de todos
-            filterBtns.forEach(b => b.classList.remove('active'));
-            // Agregar a actual
+            filterBtns.forEach((item) => item.classList.remove('active'));
             btn.classList.add('active');
-            // Renderizar
-            renderProjects(btn.getAttribute('data-filter'));
+            renderProjects(btn.dataset.filter);
         });
     });
 
-    // Render inicial
-    renderProjects();
+    const navLinks = document.getElementById('nav-links');
+    const mobileToggle = document.getElementById('mobile-toggle');
 
-    // === ANIMACIÓN AL SCROLL (Intersection Observer) ===
+    mobileToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('open');
+        const expanded = navLinks.classList.contains('open');
+        mobileToggle.setAttribute('aria-expanded', expanded.toString());
+    });
+
+    navLinks.querySelectorAll('a').forEach((link) => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('open');
+            mobileToggle.setAttribute('aria-expanded', 'false');
+        });
+    });
+
     function observeElements() {
         const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
+            entries.forEach((entry) => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('active');
+                    observer.unobserve(entry.target);
                 }
             });
-        }, { threshold: 0.1 });
+        }, { threshold: 0.15 });
 
-        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+        document.querySelectorAll('.reveal:not(.active)').forEach((element) => observer.observe(element));
     }
-    
-    // Llamar inicialmente
-    observeElements();
 
+    renderProjects();
+    observeElements();
 });
